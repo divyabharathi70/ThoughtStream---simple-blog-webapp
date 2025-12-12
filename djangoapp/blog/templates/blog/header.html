@@ -1,0 +1,53 @@
+<header class="p-3 bg-dark text-white shadow-sm">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-4 d-flex align-items-center mb-2 mb-md-0">
+        <a
+          href="/blog"
+          class="text-light text-decoration-none d-flex align-items-center gap-2"
+        >
+          <i class="fas fa-brain fa-2x" style="color: #c6c5bd"></i>
+          <h3 class="m-0 fw-bold">ThoughtStream</h3>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <nav class="d-flex justify-content-center justify-content-md-end gap-4">
+          <a class="text-light text-decoration-none nav-link-hover" href="/blog"
+            >Home</a
+          >
+          <a
+            class="text-light text-decoration-none nav-link-hover"
+            href="/blog/about"
+            >About</a
+          >
+          <a
+            class="text-light text-decoration-none nav-link-hover"
+            href="/blog/contact"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav-link-hover:hover {
+    color: #c6c5bd;
+    text-decoration: underline;
+    transition: 0.3s;
+  }
+
+  /* Optional: small shadow for header */
+  header {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Adjust icon size for smaller screens */
+  @media (max-width: 576px) {
+    header i.fas.fa-brain {
+      font-size: 1.5rem;
+    }
+  }
+</style>

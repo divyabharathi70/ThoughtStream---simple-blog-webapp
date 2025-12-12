@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", sans-serif;
+      }
+      .error-container {
+        text-align: center;
+        padding: 2rem;
+      }
+      .error-container h1 {
+        font-size: 8rem;
+        font-weight: bold;
+        color: #343a40;
+      }
+      .error-container h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #6c757d;
+      }
+      .error-container p {
+        font-size: 1.1rem;
+        color: #6c757d;
+      }
+      .btn-home {
+        margin-top: 1.5rem;
+      }
+      @media (max-width: 576px) {
+        .error-container h1 {
+          font-size: 5rem;
+        }
+        .error-container h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-container">
+      <h1>404</h1>
+      <h2>Oops! Page Not Found</h2>
+      <p>
+        The page you are looking for might have been removed, had its name
+        changed, or is temporarily unavailable.
+      </p>
+      <a href="{% url 'blog:index' %}" class="btn btn-primary btn-home"
+        >Go Back Home</a
+      >
+    </div>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+{% extends 'blog/base.html' %} {% block content %}
+
+<!-- CONTACT CONTENT -->
+<div class="container my-5">
+  <!-- Heading -->
+  <h2 class="text-center mb-4">Contact Us</h2>
+  <p class="text-center text-muted mb-5">
+    We'd love to hear from you! Reach us anytime.
+  </p>
+
+  <!-- Contact Info Cards -->
+  <div class="row">
+    <div class="col-lg-4 mb-4">
+      <div class="card shadow-sm border-0 h-100 text-center p-4">
+        <i class="bi bi-geo-alt-fill fs-2 text-primary mb-3"></i>
+        <h5 class="fw-bold">Address</h5>
+        <p class="text-muted mb-0">
+          123 Blog Avenue,<br />
+          Anna Nagar, Chennai – 600040
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+      <div class="card shadow-sm border-0 h-100 text-center p-4">
+        <i class="bi bi-envelope-fill fs-2 text-primary mb-3"></i>
+        <h5 class="fw-bold">Email</h5>
+        <p class="text-muted mb-0">info@myblog.com</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+      <div class="card shadow-sm border-0 h-100 text-center p-4">
+        <i class="bi bi-telephone-fill fs-2 text-primary mb-3"></i>
+        <h5 class="fw-bold">Phone</h5>
+        <p class="text-muted mb-0">+91 9876543210</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="row mt-5 justify-content-center">
+    <div class="col-lg-7">
+      <div class="card shadow-sm border-0 p-4 rounded-4">
+        <h4 class="mb-4 fw-bold">Send us a Message</h4>
+
+        <div id="alertBox"></div>
+
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your Name"
+              name="name"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="name@example.com"
+              name="email"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              rows="5"
+              placeholder="Your message..."
+              name="message"
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary btn-lg w-100 rounded-pill"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOCATION SECTION -->
+<div class="py-5 mt-5" style="background: #f2f2f2">
+  <div class="container">
+    <h2 class="text-center mb-4" style="color: #333">Our Location</h2>
+    <p class="text-center mb-5" style="color: #666">
+      Visit us at our office — we’re always happy to see you.
+    </p>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow-sm border-0 rounded-4 p-4 text-center">
+          <i
+            class="bi bi-geo-alt-fill"
+            style="font-size: 3rem; color: #6c757d"
+          ></i>
+
+          <h4 class="fw-bold mt-3" style="color: #333">Chennai Office</h4>
+
+          <p class="text-muted">
+            123 Blog Avenue,<br />
+            Anna Nagar, Chennai – 600040,<br />
+            Tamil Nadu, India
+          </p>
+
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            class="btn btn-lg rounded-pill px-4"
+            style="background-color: #6c757d; border: none; color: white"
+          >
+            View on Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOTSTRAP ALERT SCRIPT -->
+<script>
+  const form = document.querySelector("form");
+  const alertBox = document.getElementById("alertBox");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (form.checkValidity()) {
+      alertBox.innerHTML = `
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Your message has been sent successfully!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      `;
+      form.reset();
+    }
+  });
+</script>
+
+{% endblock %}
